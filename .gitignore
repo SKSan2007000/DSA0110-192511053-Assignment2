@@ -2,9 +2,7 @@
 *.exe
 *.out
 *.o
-task0*
-task0*_O0
-task0*_O2
+*.exe
 task04_50
 dangling_demo
 function_demo
