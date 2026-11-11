@@ -1,0 +1,36 @@
+$ ./task06_O0
+=== Complete the Code program ===
+205 false
+
+=== Correctness checks (hand-verified) ===
+same time twice  : minutesBetween=0 (expect 0), earlier(t1,t2)=false (expect false)
+11:50 and 12:10  : minutesBetween=20 (expect 20), earlier(11:50,12:10)=true (expect true)
+12:10 and 11:50  : minutesBetween=20 (expect 20, order does not matter), earlier=false (expect false)
+11:50 and 12:00  : minutesBetween=10 (expect 10)
+member versions : 205 false | getter versions : 205 false
+
+=== Growth Investigation: 10000000 calls each ===
+(compiled WITHOUT optimisation: -O0)
+friend, inline            : 205.857 ms
+friend, NOT inline        : 226.559 ms
+member functions (inline) : 248.332 ms
+public getters (inline)   : 263.874 ms
+
+$ ./task06_O2
+=== Complete the Code program ===
+205 false
+
+=== Correctness checks (hand-verified) ===
+same time twice  : minutesBetween=0 (expect 0), earlier(t1,t2)=false (expect false)
+11:50 and 12:10  : minutesBetween=20 (expect 20), earlier(11:50,12:10)=true (expect true)
+12:10 and 11:50  : minutesBetween=20 (expect 20, order does not matter), earlier=false (expect false)
+11:50 and 12:00  : minutesBetween=10 (expect 10)
+member versions : 205 false | getter versions : 205 false
+
+=== Growth Investigation: 10000000 calls each ===
+(compiled with optimisation: -O2)
+friend, inline            : 18.5758 ms
+friend, NOT inline        : 55.7217 ms
+member functions (inline) : 35.0134 ms
+public getters (inline)   : 22.3331 ms
+

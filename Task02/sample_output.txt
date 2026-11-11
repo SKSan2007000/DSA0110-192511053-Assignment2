@@ -1,0 +1,24 @@
+$ ./task02
+original marks            : 56 78 91 64 85 70 
+after highest() += 2      : 56 78 93 64 85 70 
+after highest() = 95      : 56 78 95 64 85 70 
+copy (+5, array unchanged): 100
+const ref sees the array  : 94 (follows the element: now 94)
+after ref -= 1            : 56 78 94 64 85 70 
+
+--- std::vector that grows ---
+capacity before growth : 3
+capacity after growth  : 6
+storage moved          : true
+=> 'r' still refers to the OLD freed block: using it now is undefined behaviour,
+   so it is NOT used here. Re-obtain the reference after the push_back instead.
+fresh reference works  : v[2] = 93
+index/pointer versions +2 : 56 78 96 64 85 70 
+index after vector growth : w[2] = 93 (still valid)
+
+20 scans of 1,000,000 marks: reference 24.5529 ms, index 23.9853 ms, pointer 23.9402 ms  (all O(n) time, O(1) extra space)
+
+$ ./dangling_demo; echo "exit code: $?"
+exit code: 139
+Segmentation fault
+

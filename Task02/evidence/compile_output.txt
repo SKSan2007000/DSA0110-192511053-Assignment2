@@ -1,0 +1,12 @@
+$ g++ -std=c++17 -Wall -Wextra main.cpp -o task02
+(no warnings, no errors)
+
+$ g++ -std=c++17 -Wall -Wextra dangling_demo.cpp -o dangling_demo
+dangling_demo.cpp: In function ‘int& badHighest(const int*, int)’:
+dangling_demo.cpp:11:12: warning: reference to local variable ‘best’ returned [-Wreturn-local-addr]
+   11 |     return best;                         // WARNING: reference to local variable returned
+      |            ^~~~
+dangling_demo.cpp:8:9: note: declared here
+    8 |     int best = marks[0];                 // local variable, destroyed when the function returns
+      |         ^~~~
+

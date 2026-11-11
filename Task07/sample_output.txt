@@ -1,0 +1,16 @@
+$ ./task07
+Original statement  : W1600;D1700;W1800;D1900;W2000;D2100;W2200;D2300;W2400;D2500;
+Redesigned statement: W1600;D1700;W1800;D1900;W2000;D2100;W2200;D2300;W2400;D2500;
+Identical mini-statement: true
+
+ns per add transaction (200000 adds into a full history)
+     k |  original(shift) | redesign(circular) | speed-up | same history
+    10 |          7.85351 |            1.63139 |  4.81398 | true
+    50 |          18.2283 |            1.79926 |   10.131 | true
+   500 |          65.4793 |            1.30523 |  50.1667 | true
+  5000 |          1521.81 |            1.45827 |  1043.57 | true
+
+Objective 1 (>=100x faster at k=5000)           : ACHIEVED  (1043.57x)
+Objective 2 (time at k=5000 within 2x of k=10)   : ACHIEVED  (ratio 0.893882)
+Space: original 16*k bytes; redesign the same + 4 bytes (start index)
+

@@ -1,0 +1,44 @@
+$ ./task05
+=== PART A : Predict the Output program ===
+101 103 104 4
+
+=== PART B : Complete the Code program ===
+Asha: Seat 1
+Bala: Seat 2
+Chitra: Seat 3
+Dev: Waiting
+Issued: 3
+
+=== PART B2 : bigger array than capacity + tickets created in a function ===
+Count before calling the function: 3 (capacity already full)
+Esha: Waiting
+Farid: Waiting
+Gita: Waiting
+Hari: Waiting
+Issued after two calls: 3 (objects destroyed, static counter and seats are NOT given back)
+
+=== PART C : TicketOffice per bus (two buses at once) ===
+Bus A (capacity 2):
+  Ila: Seat 1
+  Jeev: Seat 2
+  Kavi: Waiting
+Bus B (capacity 2):
+  Lata: Seat 1
+  Mani: Seat 2
+Issued A = 2, Issued B = 2
+
+$ ./function_demo
+Issued at start: 0
+Call 1:
+   Asha: Seat 1
+   Bala: Seat 2
+   (destroying ticket of Bala)
+   (destroying ticket of Asha)
+Issued after call 1: 2
+Call 2:
+   Chitra: Seat 3
+   Dev: Waiting
+   (destroying ticket of Dev)
+   (destroying ticket of Chitra)
+Issued after call 2: 3  -> the counter survives the objects; Dev got no seat because the one shared counter hit 3
+

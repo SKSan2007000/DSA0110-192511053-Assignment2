@@ -1,0 +1,27 @@
+$ ./task01
+=== PART A : three versions (45000, 10% merit concession) ===
+   inside byValue   : fee = 40500
+   stored fee after byValue    : 45000
+   inside byReference: fee = 40500
+   stored fee after byReference: 40500
+   inside byPointer : fee = 36450
+   stored fee after byPointer  : 36450
+
+=== PART B : Predict the Output program ===
+1 12 13
+1 100
+16 13 6 
+
+=== PART C : Complete the Code program ===
+after call by value : 45000
+after call by reference: 40500
+
+=== PART D : several concessions by returning the new fee ===
+   45000 -> merit 10% -> sports 15% -> single parent 25% = 25819  (original untouched: 45000)
+
+=== PART E : bytes copied per call ===
+   sizeof(long long) = 8 bytes (by value copies 8, by reference/pointer passes an address of 8)
+   sizeof(Student)   = 936 bytes (by value copies all of it; by reference / const reference 8)
+   5000000 calls: Student by value 92.8489 ms, by reference 5.82623 ms, by const reference 5.8533 ms, long long by value 5.82255 ms
+   (all are O(1) per call; only the copied bytes differ)
+

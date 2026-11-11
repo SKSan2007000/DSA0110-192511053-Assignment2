@@ -1,0 +1,6 @@
+$ g++ -std=c++17 -Wall -Wextra -O0 main.cpp -o task06_O0
+(no warnings, no errors)
+
+$ g++ -std=c++17 -Wall -Wextra -O2 main.cpp -o task06_O2
+(no warnings, no errors)
+

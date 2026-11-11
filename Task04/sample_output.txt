@@ -1,0 +1,80 @@
+$ ./task04
+HISTORY (capacity) = 10
+
+--- Design 1 : shifting array ---
+Mini-statement for A/C 1001 (last 10 transactions)
+  Deposit    300
+  Withdrawal 400
+  Deposit    500
+  Deposit    600
+  Deposit    700
+  Withdrawal 800
+  Deposit    900
+  Deposit    1000
+  Deposit    1100
+  Withdrawal 1200
+  Balance: 8000
+
+--- Design 2 : circular buffer (same 12 transactions) ---
+[circular] Mini-statement for A/C 1001 (last 10)
+  Deposit    300
+  Withdrawal 400
+  Deposit    500
+  Deposit    600
+  Deposit    700
+  Withdrawal 800
+  Deposit    900
+  Deposit    1000
+  Deposit    1100
+  Withdrawal 1200
+  Balance: 8000
+
+Time to add 2000000 transactions (capacity 10):
+  shifting array : 40.3233 ms   O(k) per add
+  circular buffer: 13.951 ms   O(1) per add
+  std::deque     : 55.0897 ms   O(1) per add
+All three designs hold identical last-10 history: true
+Space: array = 160 bytes of history (fixed); circular = same + 1 start index; deque = heap blocks + bookkeeping
+
+$ ./task04_50
+HISTORY (capacity) = 50
+
+--- Design 1 : shifting array ---
+Mini-statement for A/C 1001 (last 12 transactions)
+  Deposit    100
+  Deposit    200
+  Deposit    300
+  Withdrawal 400
+  Deposit    500
+  Deposit    600
+  Deposit    700
+  Withdrawal 800
+  Deposit    900
+  Deposit    1000
+  Deposit    1100
+  Withdrawal 1200
+  Balance: 8000
+
+--- Design 2 : circular buffer (same 12 transactions) ---
+[circular] Mini-statement for A/C 1001 (last 12)
+  Deposit    100
+  Deposit    200
+  Deposit    300
+  Withdrawal 400
+  Deposit    500
+  Deposit    600
+  Deposit    700
+  Withdrawal 800
+  Deposit    900
+  Deposit    1000
+  Deposit    1100
+  Withdrawal 1200
+  Balance: 8000
+
+Time to add 2000000 transactions (capacity 50):
+  shifting array : 135.756 ms   O(k) per add
+  circular buffer: 12.6587 ms   O(1) per add
+  std::deque     : 55.4391 ms   O(1) per add
+All three designs hold identical last-50 history: true
+Space: array = 800 bytes of history (fixed); circular = same + 1 start index; deque = heap blocks + bookkeeping
+

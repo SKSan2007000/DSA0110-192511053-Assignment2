@@ -1,0 +1,18 @@
+$ ./task03
+1. charge(2)               =  [charge(int grams)] 0.10
+2. charge(2.0f)            =  [charge(double kg, express, insured)] 100.00
+3. charge(2.5)             =  [charge(double kg, express, insured)] 125.00
+4. charge(1.2, true)       =  [charge(double kg, express, insured)] 90.00
+5. charge(1.2, true, true) =  [charge(double kg, express, insured)] 110.00
+6. charge(parcel)          =  [charge(const Parcel&)] 245.00
+7. charge(1500)            =  [charge(int grams)] 75.00
+
+--- Alternative: options struct and function template ---
+chargeWith(3.0, {express, insured, fragile}) = 260.00
+chargeWith(2.5)                              = 125.00
+chargeT(1500)   (int grams)   = 75.00
+chargeT(2.5)    (double kg)   = 125.00
+chargeT(2.0f,true) (float kg) = 150.00
+
+Bytes copied per call: double=8, int=4, Parcel by value=48, Parcel by const& = 8, Options by const& = 8 (Options itself is 3)
+

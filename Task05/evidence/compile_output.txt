@@ -1,0 +1,19 @@
+$ g++ -std=c++17 -Wall -Wextra main.cpp -o task05
+(no warnings, no errors)
+
+$ g++ -std=c++17 -Wall -Wextra function_demo.cpp -o function_demo
+(no warnings, no errors)
+
+$ g++ -std=c++17 -Wall -Wextra static_member_error.cpp -o err
+static_member_error.cpp: In static member function ‘static int T::bad()’:
+static_member_error.cpp:8:31: error: invalid use of member ‘T::id’ in static member function
+    8 |     static int bad() { return id; }          // ERROR: invalid use of member 'id' in static member function
+      |                               ^~
+static_member_error.cpp:6:9: note: declared here
+    6 |     int id = 0;
+      |         ^~
+static_member_error.cpp: In static member function ‘static int T::bad2()’:
+static_member_error.cpp:9:32: error: ‘this’ is unavailable for static member functions
+    9 |     static int bad2() { return this->id; }   // ERROR: 'this' is unavailable for static member functions
+      |                                ^~~~
+

@@ -1,0 +1,3 @@
+$ g++ -std=c++17 -Wall -Wextra main.cpp -o task01
+(no warnings, no errors)
+

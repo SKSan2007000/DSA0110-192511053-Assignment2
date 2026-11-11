@@ -1,0 +1,6 @@
+$ g++ -std=c++17 -Wall -Wextra main.cpp -o task04
+(no warnings, no errors)
+
+$ g++ -std=c++17 -Wall -Wextra -DHISTORY=50 main.cpp -o task04_50
+(no warnings, no errors)
+

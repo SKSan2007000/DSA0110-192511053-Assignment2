@@ -1,0 +1,24 @@
+$ g++ -std=c++17 -Wall -Wextra ambiguous_original.cpp -o amb
+ambiguous_original.cpp: In function ‘int main()’:
+ambiguous_original.cpp:14:24: error: call of overloaded ‘charge(double)’ is ambiguous
+   14 |     std::cout << charge(2.5) << '\n';        // ERROR: matches (double) AND (double, bool=false, bool=false)
+      |                  ~~~~~~^~~~~
+ambiguous_original.cpp:5:8: note: candidate: ‘double charge(double)’
+    5 | double charge(double weight) { return weight * 50; }
+      |        ^~~~~~
+ambiguous_original.cpp:7:8: note: candidate: ‘double charge(double, bool, bool)’
+    7 | double charge(double weight, bool express = false, bool insured = false)
+      |        ^~~~~~
+ambiguous_original.cpp:15:24: error: call of overloaded ‘charge(double, bool)’ is ambiguous
+   15 |     std::cout << charge(2.5, true) << '\n';  // ERROR: matches (double,bool) AND (double,bool,bool=false)
+      |                  ~~~~~~^~~~~~~~~~~
+ambiguous_original.cpp:6:8: note: candidate: ‘double charge(double, bool)’
+    6 | double charge(double weight, bool express) { return weight * 50 + (express ? 25 : 0); }
+      |        ^~~~~~
+ambiguous_original.cpp:7:8: note: candidate: ‘double charge(double, bool, bool)’
+    7 | double charge(double weight, bool express = false, bool insured = false)
+      |        ^~~~~~
+
+$ g++ -std=c++17 -Wall -Wextra main.cpp -o task03
+(no warnings, no errors)
+
