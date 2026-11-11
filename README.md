@@ -15,16 +15,6 @@ g++ -std=c++17 -Wall -Wextra main.cpp -o taskNN
 ```
 Variants: Task04 capacity 50 adds `-DHISTORY=50`; Task06 and Task07 are compiled with `-O0` and/or `-O2` (see the table).
 
-## How to run
-```
-cd TaskNN
-g++ -std=c++17 -Wall -Wextra main.cpp -o taskNN
-./taskNN            # on Windows: taskNN.exe
-```
-Extra files: `Task02/dangling_demo.cpp` (compiler-warning evidence), `Task03/ambiguous_original.cpp` (ambiguity error evidence), `Task05/function_demo.cpp` and `Task05/static_member_error.cpp`.
-
-## Folder layout (one folder per task)
-`TaskNN/main.cpp` - source, `TaskNN/sample_output.txt` - captured output, `TaskNN/evidence/` - compile output and terminal screenshots, `TaskNN/notes.md` - predictions, explanations and analysis.
 
 ## Result of each task
 | Task | Question | Result |
@@ -39,8 +29,4 @@ Extra files: `Task02/dangling_demo.cpp` (compiler-warning evidence), `Task03/amb
 
 `REPORT.md` contains the cover page and the written answers for Q1-Q7.
 
-## Commit history
-Commit one task at a time with `./commit_task.sh N` (see the script), so the history shows progressive work.
 
-## Note on the screenshots
-`evidence/*.png` are terminal captures rendered from the real compile and run output of these programs (g++ 13.3.0). Timings differ between computers; re-run on your own machine and replace the screenshots/timings with your own if you wish.
